@@ -6,18 +6,18 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/5 bg-card">
+    <footer className="border-t border-white/10 bg-brand">
       <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
             <Logo variant="full-light" linked={false} className="mb-6" />
-            <p className="max-w-xs text-sm leading-relaxed text-muted">
+            <p className="max-w-xs text-sm leading-relaxed text-silver">
               {site.description}
             </p>
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-accent">
+            <h3 className="label-brand mb-4 text-sm font-semibold uppercase">
               Quick links
             </h3>
             <ul className="space-y-2">
@@ -25,7 +25,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted transition hover:text-foreground"
+                    className="text-sm text-silver transition hover:text-foreground"
                   >
                     {link.label}
                   </Link>
@@ -35,19 +35,19 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-accent">
+            <h3 className="label-brand mb-4 text-sm font-semibold uppercase">
               Contact
             </h3>
-            <ul className="space-y-2 text-sm text-muted">
+            <ul className="space-y-2 text-sm text-silver">
               <li>{site.address.line1}</li>
               <li>{site.address.line2}</li>
               <li>
-                <a href={site.phoneHref} className="transition hover:text-accent">
+                <a href={site.phoneHref} className="transition hover:text-foreground">
                   {site.phone}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${site.email}`} className="transition hover:text-accent">
+                <a href={`mailto:${site.email}`} className="transition hover:text-foreground">
                   {site.email}
                 </a>
               </li>
@@ -55,7 +55,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-xs text-muted sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-silver sm:flex-row">
           <p>
             © {year} {site.legalName}. Example data — all rights reserved.
           </p>
@@ -65,7 +65,7 @@ export function Footer() {
               href={site.partner.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent hover:underline"
+              className="text-foreground underline-offset-2 hover:underline"
             >
               {site.partner.name}
             </a>

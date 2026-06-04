@@ -1,4 +1,4 @@
-const iconClass = "h-6 w-6 text-accent";
+const iconClass = "h-6 w-6 text-silver";
 
 export function ServiceIcon({ type }: { type: string }) {
   switch (type) {

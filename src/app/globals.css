@@ -1,27 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #030508;
-  --foreground: #e8eef4;
-  --navy: #001f3f;
-  --navy-light: #0a3d6e;
-  --accent: #22d3ee;
-  --accent-dim: #0891b2;
-  --muted: #8ba3b8;
-  --card: #0a1018;
-  --card-border: rgba(34, 211, 238, 0.12);
-  --glow: rgba(34, 211, 238, 0.25);
+  /* Brand — matches logo.svg (#001A3F) */
+  --brand: #001a3f;
+  --brand-mid: #0d2d52;
+  --brand-deep: #000810;
+  --brand-soft: #1a4470;
+  --silver: #c5d4e3;
+  --silver-muted: #8fa3b8;
+
+  --background: #04080f;
+  --foreground: #f4f7fa;
+  --muted: var(--silver-muted);
+  --card: #0a1424;
+  --card-elevated: #0f1d32;
+  --card-border: rgba(197, 212, 227, 0.1);
+  --accent: #3d6b9a;
+  --accent-hover: #5a85b0;
+  --glow: rgba(0, 26, 63, 0.55);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-navy: var(--navy);
-  --color-navy-light: var(--navy-light);
-  --color-accent: var(--accent);
-  --color-accent-dim: var(--accent-dim);
+  --color-brand: var(--brand);
+  --color-brand-mid: var(--brand-mid);
+  --color-brand-soft: var(--brand-soft);
+  --color-silver: var(--silver);
   --color-muted: var(--muted);
   --color-card: var(--card);
+  --color-card-elevated: var(--card-elevated);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -38,30 +48,34 @@ body {
 
 .grid-bg {
   background-image:
-    linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
-  background-size: 64px 64px;
+    linear-gradient(rgba(197, 212, 227, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(197, 212, 227, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-.hero-glow {
-  background: radial-gradient(
-    ellipse 80% 60% at 50% -20%,
-    rgba(0, 31, 63, 0.9) 0%,
-    rgba(34, 211, 238, 0.08) 40%,
-    transparent 70%
+.hero-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(0, 10, 20, 0.94) 0%,
+    rgba(0, 26, 63, 0.88) 45%,
+    rgba(0, 26, 63, 0.55) 100%
+  );
+}
+
+.image-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(4, 8, 15, 0.95) 0%,
+    rgba(0, 26, 63, 0.5) 50%,
+    rgba(0, 26, 63, 0.25) 100%
   );
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #22d3ee 50%, #8ba3b8 100%);
+  background: linear-gradient(135deg, #ffffff 0%, var(--silver) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.card-shine {
-  position: relative;
-  overflow: hidden;
 }
 
 .card-shine::before {
@@ -70,10 +84,46 @@ body {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(34, 211, 238, 0.08) 0%,
-    transparent 50%
+    rgba(197, 212, 227, 0.06) 0%,
+    transparent 55%
   );
   pointer-events: none;
+}
+
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--foreground);
+  color: var(--brand);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--silver);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(197, 212, 227, 0.35);
+  color: var(--foreground);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--silver);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.label-brand {
+  color: var(--silver);
+  letter-spacing: 0.2em;
+}
+
+.stat-value {
+  color: var(--silver);
 }
 
 @keyframes fade-up {

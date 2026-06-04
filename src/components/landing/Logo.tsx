@@ -36,7 +36,7 @@ export function Logo({
           <span className="block text-sm font-bold tracking-wide text-foreground">
             CONTINENTAL CARGO
           </span>
-          <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-muted">
+          <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-silver">
             Logistics Company
           </span>
         </div>

@@ -14,11 +14,11 @@
   </defs>
   <g mask="url(#ring-cutout)">
     <g transform="translate(250, 190)">
-      <circle cx="0" cy="0" r="85" fill="none" stroke="#22d3ee" stroke-width="16" />
-      <circle cx="0" cy="0" r="53" fill="none" stroke="#f0f6fc" stroke-width="16" />
+      <circle cx="0" cy="0" r="85" fill="none" stroke="#c5d4e3" stroke-width="16" />
+      <circle cx="0" cy="0" r="53" fill="none" stroke="#f4f7fa" stroke-width="16" />
     </g>
   </g>
   <g transform="translate(250, 190)">
-    <use href="#star" fill="#f0f6fc" />
+    <use href="#star" fill="#f4f7fa" />
   </g>
 </svg>
